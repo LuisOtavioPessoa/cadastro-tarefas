@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro e Listagem de Produtos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="cadastro.js" defer></script>
+</head>
+<body>
+    
+    <h1>Cadastro de Tarefas</h1>
+
+    <form id="formulario">
+        <label for="identificador">Identificador da tarefa: </label>
+        <input type="number" id="identificador" name="identificador" required><br><br>
+
+        <label for="tarefa">Nome da Tarefa: </label>
+        <input type="text" id="tarefa" name="tarefa" required> <br><br>
+
+        <label for="custo">Custo (R$): </label>
+        <input type="number" id="custo" name="custo" step="0.01" required> <br><br>
+
+        <label for="data">Data Limite: </label>
+        <input type="date" id="data" name="data" required> <br><br>
+
+        <label for="ordem">Ordem de Apresentação: </label>
+        <input type="number" id="ordem" name="ordem" required> <br><br>
+
+        <button type="submit">Cadastrar Tarefa</button>
+    </form>
+
+    <h2 id="lista-tarefas">Lista das Tarefas</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Identificador</th>
+                    <th>Nome da Tarefa</th>
+                    <th>Custo (R$)</th>
+                    <th>Data Limite</th>
+                    <th>Ordem de Apresentação</th>
+                </tr>
+            </thead>
+            <tbody id="tarefas-lista">
+                
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
