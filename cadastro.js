@@ -17,7 +17,6 @@ function carregarTarefas() {
         .catch(error => console.error('Erro ao carregar tarefas:', error));
 }
 
-// Função para atualizar a tabela com as tarefas
 function atualizarTabela() {
     const tarefasLista = document.getElementById('tarefas-lista');
     tarefasLista.innerHTML = ''; // Limpa o conteúdo atual da tabela
@@ -31,6 +30,7 @@ function atualizarTabela() {
         }
 
         row.innerHTML = `
+            <td>${tarefa.identificador}</td> <!-- Adicionando o identificador -->
             <td>${tarefa.tarefa}</td>
             <td>${parseFloat(tarefa.custo).toFixed(2)}</td>
             <td>${tarefa.datalimite}</td>
@@ -49,6 +49,10 @@ function atualizarTabela() {
         tarefasLista.appendChild(row); // Adiciona a nova linha ao tbody
     });
 }
+
+// Carrega as tarefas ao carregar a página
+window.onload = carregarTarefas;
+
 
 function editarTarefa(identificador) {
     // Fazer uma requisição para obter os dados da tarefa
