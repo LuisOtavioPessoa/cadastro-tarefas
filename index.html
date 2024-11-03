@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro e Listagem de Produtos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="estilo.css">
     <script src="cadastro.js" defer></script>
 </head>
@@ -13,8 +14,6 @@
     <h1>Cadastro de Tarefas</h1>
 
     <form id="formulario">
-        <label for="identificador">Identificador da tarefa: </label>
-        <input type="number" id="identificador" name="identificador" required><br><br>
 
         <label for="tarefa">Nome da Tarefa: </label>
         <input type="text" id="tarefa" name="tarefa" required> <br><br>
@@ -28,7 +27,7 @@
         <label for="ordem">Ordem de Apresentação: </label>
         <input type="number" id="ordem" name="ordem" required> <br><br>
 
-        <button type="submit">Cadastrar Tarefa</button>
+        <button type="submit" class="btn-cadastrar">Cadastrar Tarefa</button>
     </form>
 
     <h2 id="lista-tarefas">Lista das Tarefas</h2>
@@ -36,17 +35,31 @@
         <table>
             <thead>
                 <tr>
-                    <th>Identificador</th>
                     <th>Nome da Tarefa</th>
                     <th>Custo (R$)</th>
                     <th>Data Limite</th>
                     <th>Ordem de Apresentação</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="tarefas-lista">
                 
             </tbody>
         </table>
+    </div>
+
+    <div id="popup-editar" class="popup">
+        <div class="popup-conteudo">
+            <span class="popup-fechar" onclick="fecharPopup()">&times;</span>
+                <h2>Editar Tarefa</h2>
+                    <form id="formulario-editar">
+                        <input type="text" id="editar-tarefa" placeholder="Nome da tarefa" required>
+                        <input type="number" id="editar-custo" placeholder="Custo" required>
+                        <input type="date" id="editar-data"  required>
+                        <input type="hidden" id="editar-id">
+                            <button type="submit">Salvar</button>
+                    </form>
+        </div>
     </div>
 
 </body>
